@@ -7,11 +7,18 @@ maximum Core Web Vitals performance and clean SEO — ideal for Google Ads landi
 
 ## ✨ What's included
 
-- **5 pages** — Home, Services, About, Contact, plus a Thank-You page and a custom 404
-- **Working lead capture** — quote/contact forms wired to **Netlify Forms** (no backend needed)
+- **10 pages** — Home, Services overview, three dedicated service landing pages
+  (Sidewalk Sheds, Supported Scaffolding, Overhead Bridging), Gallery, About, FAQ,
+  Contact — plus a Thank-You page and a custom 404
+- **Working lead capture** — quote/contact forms wired to **Netlify Forms** (no backend
+  needed). Each service landing page's form pre-tags the submission with its service.
 - **SEO built in** — unique title + meta descriptions per page, canonical URLs, Open Graph
-  & Twitter cards, JSON-LD structured data (LocalBusiness, Service, Breadcrumbs, ContactPage),
+  & Twitter cards, JSON-LD structured data (LocalBusiness, Service, Breadcrumbs, ContactPage,
+  and **FAQPage** on the FAQ + service pages, eligible for rich results),
   `sitemap.xml`, `robots.txt`, and a web app manifest
+- **Ads-ready** — dedicated, keyword-focused landing pages per service (much better Google
+  Ads Quality Score than sending all traffic to the homepage), plus a ready-to-fill
+  Google Ads / GA4 conversion hook on the Thank-You page
 - **Fast & responsive** — no frameworks, no external images (custom inline SVG artwork),
   mobile-first layout, accessible markup, `prefers-reduced-motion` support
 - **Netlify-ready** — `netlify.toml` with clean URLs, caching, and security headers
@@ -20,21 +27,33 @@ maximum Core Web Vitals performance and clean SEO — ideal for Google Ads landi
 
 ```
 .
-├── index.html          # Home
-├── services.html       # Services (supported scaffolding, sheds, bridging, debris)
-├── about.html          # About / company
-├── contact.html        # Contact + full quote form (main conversion page)
-├── thank-you.html      # Post-submission confirmation (noindex)
-├── 404.html            # Custom not-found page
-├── css/styles.css      # Design system + all styles
-├── js/main.js          # Nav, FAQ accordion, scroll reveal, form UX
-├── images/og-image.svg # Social share image
-├── favicon.svg         # Brand mark / favicon
+├── index.html            # Home
+├── services.html         # Services overview (links to the landing pages below)
+├── sidewalk-sheds.html   # Landing page — Sidewalk Sheds / Bridging (+ FAQ schema)
+├── scaffolding.html      # Landing page — Supported Scaffolding (+ FAQ schema)
+├── bridging.html         # Landing page — Overhead Bridging & Protection (+ FAQ schema)
+├── gallery.html          # Project gallery (swap SVGs for real photos)
+├── about.html            # About / company
+├── faq.html              # Full FAQ page (FAQPage schema for rich results)
+├── contact.html          # Contact + full quote form (main conversion page)
+├── thank-you.html        # Post-submission confirmation (noindex) + conversion hook
+├── 404.html              # Custom not-found page
+├── css/styles.css        # Design system + all styles
+├── js/main.js            # Nav, FAQ accordion, scroll reveal, form UX
+├── images/og-image.svg   # Social share image
+├── favicon.svg           # Brand mark / favicon
 ├── robots.txt
 ├── sitemap.xml
 ├── site.webmanifest
-└── netlify.toml        # Netlify config (redirects, headers, caching)
+└── netlify.toml          # Netlify config (redirects, headers, caching)
 ```
+
+### Swapping the gallery placeholders for real photos
+
+`gallery.html` uses SVG renderings as placeholders. To use real photos, replace each
+`<figure class="project">` block's inline `<svg>...</svg>` with an
+`<img src="/images/your-photo.jpg" alt="Descriptive alt text">`. Keep the `.project-tag`
+and `.project-cap` captions. Compress photos (e.g. WebP) for fast loading.
 
 ## 🚀 Deploy to Netlify
 
@@ -89,11 +108,16 @@ replace across all files:
 - Structured data (JSON-LD) helps you qualify for rich results and local packs.
   Validate it at <https://search.google.com/test/rich-results>.
 - After deploying, submit `sitemap.xml` in **Google Search Console**.
-- **Conversion tracking:** add your GA4 / Google Ads tag to the `<head>` of each page,
-  and fire a conversion on `thank-you.html`. Because form submissions redirect there,
-  it's a clean conversion trigger for your ad campaigns.
-- Landing-page relevance: the homepage and `contact.html` are strong ad destinations.
-  You can deep-link the quote form and preselect a service, e.g.
+- **Conversion tracking:** a ready-to-fill snippet is already in `thank-you.html` (commented
+  out). Paste your global gtag base snippet into every page's `<head>`, then uncomment the
+  block in `thank-you.html` and drop in your Google Ads conversion ID + label. Because form
+  submissions redirect there, it's a clean, reliable conversion trigger.
+- **Point each ad group at its matching landing page** for the best Quality Score:
+  - "sidewalk shed" / "sidewalk bridging" ads → `/sidewalk-sheds.html`
+  - "scaffolding" / "facade scaffold" ads → `/scaffolding.html`
+  - "overhead protection" / "debris bridge" ads → `/bridging.html`
+  Each landing page has its own H1, FAQ, `FAQPage` schema, and a service-tagged quote form.
+- You can also deep-link the contact form and preselect a service, e.g.
   `contact.html?service=Sidewalk%20Shed` (handled by `js/main.js`).
 
 ## 🎨 Customizing the look

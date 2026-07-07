@@ -13,6 +13,31 @@
   status = 301
 
 [[redirects]]
+  from = "/sidewalk-sheds"
+  to = "/sidewalk-sheds.html"
+  status = 301
+
+[[redirects]]
+  from = "/scaffolding"
+  to = "/scaffolding.html"
+  status = 301
+
+[[redirects]]
+  from = "/bridging"
+  to = "/bridging.html"
+  status = 301
+
+[[redirects]]
+  from = "/gallery"
+  to = "/gallery.html"
+  status = 301
+
+[[redirects]]
+  from = "/faq"
+  to = "/faq.html"
+  status = 301
+
+[[redirects]]
   from = "/about"
   to = "/about.html"
   status = 301
