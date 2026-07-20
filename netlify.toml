@@ -1,12 +1,11 @@
-# Netlify configuration — Amguard
-# This is a plain static site (no build step). Netlify serves the repo root
-# and auto-detects the Netlify Forms in index.html and contact.html.
+# Netlify configuration — Ambedo Holdings
+# Static site, no build step. Netlify auto-detects Forms.
 
 [build]
   publish = "."
   command = ""
 
-# Nice URLs: /services instead of /services.html (optional, both still work)
+# Clean URLs
 [[redirects]]
   from = "/services"
   to = "/services.html"
@@ -22,7 +21,6 @@
   to = "/scaffolding.html"
   status = 301
 
-# Bridging folded into Sidewalk Sheds — redirect the old paths
 [[redirects]]
   from = "/bridging"
   to = "/sidewalk-sheds.html"

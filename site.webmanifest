@@ -1,11 +1,11 @@
 {
-  "name": "Amguard",
-  "short_name": "Amguard",
-  "description": "NYC scaffolding, sidewalk sheds and overhead bridging. Licensed & insured.",
+  "name": "Ambedo Holdings",
+  "short_name": "Ambedo",
+  "description": "NYC's premier sidewalk shed & pipe scaffolding company. Licensed & insured.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0b1220",
-  "theme_color": "#0b1220",
+  "background_color": "#080d17",
+  "theme_color": "#080d17",
   "icons": [
     { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
   ]
